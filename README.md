@@ -1,29 +1,29 @@
-# Quiz Geladeira Pronta
+# Quiz Frigo Pronto
 
-Reprodução React do HTML fornecido em `qa/reference.html`. Os estilos e as fontes em `src/source.css` foram extraídos diretamente desse arquivo. A página original não contém rodapé; o fluxo tem sete etapas, carregamento e tela de vídeo.
+Versione React del quiz fornito in `qa/reference.html`. I fogli di stile e i font in `src/source.css` provengono dal file originale. Il percorso comprende sette domande, una schermata di caricamento e il video finale. I testi dell'interfaccia sono in italiano e le due immagini principali sono quelle fornite per Frigo Pronto.
 
-## Abrir por duplo clique
+## Aprire il file direttamente
 
-Abra `index.html` na raiz do projeto. Ele contém o React e o CSS embutidos e funciona diretamente como `file://`. Após alterações no código, execute `pnpm.cmd build` para atualizá-lo.
+Apri `index.html` nella cartella principale del progetto. Include React e CSS e funziona anche con `file://`. Dopo ogni modifica al codice, esegui `pnpm.cmd build` per aggiornarlo.
 
-## Desenvolvimento
+## Sviluppo
 
 ```powershell
 pnpm.cmd install
 pnpm.cmd dev
 ```
 
-Abra `http://localhost:5173/src/dev.html`. Para gerar a versão de produção e atualizar o arquivo de abertura direta, execute `pnpm.cmd build`.
+Apri `http://localhost:5173/src/dev.html`. Per generare la versione aggiornata di `index.html`, esegui `pnpm.cmd build`.
 
-## Conferência visual
+## Verifica
 
-Com o servidor local ativo:
+Con il server locale avviato:
 
 ```powershell
-node qa/compare.mjs
 node qa/verify.mjs
+node qa/verify-video.mjs
 ```
 
-`compare.mjs` compara as capturas estáticas do HTML original e do `index.html` aberto como `file://` em 390 px e 1280 px. `verify.mjs` percorre as sete etapas e o atraso de 30 segundos da tela de vídeo. `verify-video.mjs` confere que o iframe carregado durante o progresso permanece montado e inicia a reprodução ao aparecer. Os scripts usam o Chrome instalado em `C:/Program Files/Google/Chrome/Application/chrome.exe`.
+`verify.mjs` percorre tutte le sette domande e verifica il ritardo di 30 secondi prima della comparsa dei pulsanti finali. `verify-video.mjs` controlla che il player caricato durante la schermata di progresso continui a riprodurre il video quando appare il risultato. Gli script usano Chrome installato in `C:/Program Files/Google/Chrome/Application/chrome.exe`.
 
-A tela de progresso aguarda no mínimo 3,2 segundos e a carga inicial do iframe, com limite de 9 segundos. O vídeo começa automaticamente sem som, de acordo com as regras dos navegadores; a pessoa ativa o áudio no próprio player.
+La schermata di progresso dura almeno 3,2 secondi e attende il caricamento iniziale del player, per un massimo di 9 secondi. Il video parte automaticamente senza audio; l'utente può attivare l'audio nel player.

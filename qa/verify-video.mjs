@@ -12,6 +12,8 @@ await page.goto(pathToFileURL(resolve('index.html')).href);
 await page.locator('#nome').fill('Teste Silva');
 await page.locator('#go').click();
 for (let i = 0; i < 6; i++) {
+  const width = await page.evaluate(() => ({ page: document.documentElement.scrollWidth, viewport: window.innerWidth }));
+  if (width.page > width.viewport) throw Error(`Quiz step ${i + 2} has horizontal overflow: ${JSON.stringify(width)}`);
   await page.locator('.opt').first().click();
   await page.waitForTimeout(260);
 }

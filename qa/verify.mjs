@@ -25,6 +25,14 @@ for (const size of sizes) {
     await page.evaluate(() => document.fonts.ready);
     await page.locator('.logo img').evaluate((image) => image.decode().catch(() => {}));
     await page.locator('.art img').evaluate((image) => image.decode().catch(() => {}));
+    if (kind === 'react') {
+      const assets = await page.evaluate(() => ({
+        lang: document.documentElement.lang,
+        logo: document.querySelector('.logo img')?.naturalWidth,
+        art: document.querySelector('.art img')?.naturalWidth,
+      }));
+      if (assets.lang !== 'it' || !assets.logo || !assets.art) throw Error(`Italian page or supplied images did not load: ${JSON.stringify(assets)}`);
+    }
     await page.waitForTimeout(600);
     await page.screenshot({ path: `qa/${kind}-${size.name}.png`, fullPage: true });
     const layout = await page.evaluate(() => ({
@@ -39,7 +47,7 @@ for (const size of sizes) {
     if (kind === 'react' && size.name === 'mobile') {
       await page.locator('#nome').fill('Teste Silva');
       await page.locator('#go').click();
-      if (!await page.locator('h1').textContent().then((x) => x.includes('Teste, qual é a sua idade?'))) throw Error('Name step failed');
+      if (!await page.locator('h1').textContent().then((x) => x.includes('Teste, quanti anni hai?'))) throw Error('Name step failed');
       await page.locator('#back').click();
       if (await page.locator('#nome').inputValue() !== 'Teste Silva') throw Error('Back step failed');
       await page.locator('#go').click();

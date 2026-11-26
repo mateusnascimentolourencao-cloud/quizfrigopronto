@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { BUY_URL, STEPS, VIDEO_URL } from './quizData.js';
 
-const LOGO = 'https://umbrellacodes.com/api/mirror-assets/9285fa3e4e25f17243625998c0ce146f2722d02a1fe6e35de70f52b85b6f5664.webp';
+const LOGO = '/img/livro-frigo-pronto.png';
 const LOADING_STEPS = [
-  'Analisando as suas respostas…',
-  'Escolhendo as marmitas pro seu perfil…',
-  'Montando o seu plano…',
-  'Preparando a mensagem da Chef Luana…',
+  'Analizziamo le tue risposte…',
+  'Scegliamo i pasti adatti a te…',
+  'Prepariamo il tuo piano…',
+  'Prepariamo il messaggio della Chef Luana…',
 ];
 
 function CheckIcon({ strokeWidth = '3.2' }) {
@@ -27,10 +27,10 @@ function Header({ index, phase, onBack }) {
     <div className="top-in">
       <div className="brandrow">
         <div className="logo">
-          <img src={LOGO} alt="Livro Método Geladeira Pronta" width="300" height="278" loading="eager" decoding="sync" />
-          <span>Geladeira <em>Pronta</em></span>
+          <img src={LOGO} alt="Libro del Metodo Frigo Pronto" width="1303" height="1207" loading="eager" decoding="sync" />
+          <span>Frigo <em>Pronto</em></span>
         </div>
-        <button className="back" id="back" type="button" aria-label="Voltar" hidden={!quiz || index === 0} onClick={onBack}>
+        <button className="back" id="back" type="button" aria-label="Indietro" hidden={!quiz || index === 0} onClick={onBack}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M15 5l-7 7 7 7" /></svg>
         </button>
       </div>
@@ -46,7 +46,7 @@ function Hero({ step }) {
   const [showImage, setShowImage] = useState(true);
   return <div className="art">
     <div className="ph" hidden={!showPlaceholder}>
-      <span aria-hidden="true"><ImageIcon /></span><b>Arte 1</b><span>{step.artNote}</span>
+      <span aria-hidden="true"><ImageIcon /></span><b>Immagine 1</b><span>{step.artNote}</span>
     </div>
     <img src={step.art} alt="" hidden={!showImage} onLoad={() => setShowPlaceholder(false)} onError={() => setShowImage(false)} />
   </div>;
@@ -58,7 +58,7 @@ function Section({ children, live = false, className = '', ariaHidden }) {
 
 function firstName(value) {
   const word = value.trim().split(/\s+/)[0] || '';
-  return word.charAt(0).toLocaleUpperCase('pt-BR') + word.slice(1).toLocaleLowerCase('pt-BR');
+  return word.charAt(0).toLocaleUpperCase('it-IT') + word.slice(1).toLocaleLowerCase('it-IT');
 }
 
 function getOrigin() {
@@ -94,10 +94,10 @@ function Quiz({ index, name, fullName, setFullName, answers, onName, onOption })
     <div className="q"><h1>{step.question(name)}</h1></div>
     {step.type === 'text' ? <>
       <form id="f" className="field" noValidate onSubmit={(event) => { event.preventDefault(); if (firstName(fullName).length >= 2) onName(fullName); }}>
-        <input id="nome" name="nome" type="text" aria-label="Seu nome completo" autoComplete="name" maxLength="60" placeholder="Nome e sobrenome" value={fullName} onChange={(event) => setFullName(event.target.value)} />
-        <button className="btn pulse" id="go" type="submit" disabled={firstName(fullName).length < 2}>Começar <ArrowIcon /></button>
+        <input id="nome" name="nome" type="text" aria-label="Il tuo nome e cognome" autoComplete="name" maxLength="60" placeholder="Nome e cognome" value={fullName} onChange={(event) => setFullName(event.target.value)} />
+        <button className="btn pulse" id="go" type="submit" disabled={firstName(fullName).length < 2}>Inizia <ArrowIcon /></button>
       </form>
-      <div className="trust"><span><CheckIcon />Monte seu plano com apenas 7 perguntas</span></div>
+      <div className="trust"><span><CheckIcon />Crea il tuo piano con sole 7 domande</span></div>
     </> : <div className="opts" role="radiogroup">
       {step.options.map(([label], k) => {
         const selected = answers[step.id] === k;
@@ -144,13 +144,13 @@ function Loading({ name, onDone, playerLoaded }) {
   const circumference = 2 * Math.PI * 56;
   return <Section className="loading-screen">
     <div className="load">
-      <span className="load-eyebrow">Seu plano personalizado</span>
+      <span className="load-eyebrow">Il tuo piano personalizzato</span>
       <div className="ring"><svg viewBox="0 0 132 132">
         <circle cx="66" cy="66" r="56" stroke="#eef6f0" strokeWidth="11" fill="none" />
         <circle id="arc" cx="66" cy="66" r="56" stroke="#ea580c" strokeWidth="11" fill="none" strokeLinecap="round" strokeDasharray={circumference} strokeDashoffset={circumference * (1 - progress)} />
       </svg><div className="pct" id="pct">{Math.round(progress * 100)}%</div></div>
-      <h1 style={{ fontSize: 21 }}>{name}, estamos montando o seu plano</h1>
-      <p className="load-sub">Mais um instante para deixar tudo pronto.</p>
+      <h1 style={{ fontSize: 21 }}>{name}, stiamo preparando il tuo piano</h1>
+      <p className="load-sub">Ancora un momento e sarà tutto pronto.</p>
       <ul className="steps" id="lsteps">{LOADING_STEPS.map((label, k) => <li key={label} className={progress >= (k + 1) / 4 ? 'ok' : progress >= k / 4 ? 'go' : ''}><span className="d"><CheckIcon /></span><span>{label}</span></li>)}</ul>
     </div>
   </Section>;
@@ -175,10 +175,10 @@ function Result({ name, active, onPlayerLoad }) {
     ? `https://quiz-geladeira-pronta.chefluana.workers.dev/combo${search}`
     : `/combo${search}`;
   return <Section className={active ? '' : 'result-preload'} ariaHidden={!active}>
-    <div className="q"><h1 className="ready">{name}, o seu plano personalizado está pronto.</h1><p className="sub">Mas antes, veja essa mensagem da Chef Luana para você.</p></div>
-    <div className="video" id="vsl"><iframe ref={iframeRef} id="panda-d22e8f74-5111-4cb3-92c7-cd110a759446" src={VIDEO_URL} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowFullScreen loading="eager" fetchPriority="high" title="Mensagem da Chef Luana" onLoad={onPlayerLoad} /></div>
-    <a className="btn pulse" id="buy" href={`${BUY_URL}${search}`} hidden={!showButtons} onClick={() => count('comprar')}>Adquirir Geladeira Pronta <ArrowIcon /></a>
-    <a className="nao" id="nao" href={noUrl} hidden={!showButtons} onClick={() => count('recusar')}>Não, obrigado. Vou continuar sem o Geladeira Pronta.</a>
+    <div className="q"><h1 className="ready">{name}, il tuo piano personalizzato è pronto.</h1><p className="sub">Prima, però, guarda questo messaggio della Chef Luana per te.</p></div>
+    <div className="video" id="vsl"><iframe ref={iframeRef} id="panda-d22e8f74-5111-4cb3-92c7-cd110a759446" src={VIDEO_URL} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowFullScreen loading="eager" fetchPriority="high" title="Messaggio della Chef Luana" onLoad={onPlayerLoad} /></div>
+    <a className="btn pulse" id="buy" href={`${BUY_URL}${search}`} hidden={!showButtons} onClick={() => count('comprar')}>Acquista Frigo Pronto <ArrowIcon /></a>
+    <a className="nao" id="nao" href={noUrl} hidden={!showButtons} onClick={() => count('recusar')}>No, grazie. Continuerò senza Frigo Pronto.</a>
   </Section>;
 }
 
