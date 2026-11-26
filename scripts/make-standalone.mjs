@@ -11,6 +11,7 @@ const bundledScript = readFileSync(join(assetDirectory, jsFile), 'utf8');
 const styles = readFileSync(join(assetDirectory, cssFile), 'utf8').replaceAll(/<\/style/gi, '<\\/style');
 
 function htmlFor(imagePrefix) {
+  const localStyles = styles.replaceAll('../fonts/', `${imagePrefix}/fonts/`);
   let script = bundledScript;
   for (const image of ['arte-1.webp', 'livro-frigo-pronto.webp']) {
     const originalPath = JSON.stringify(`/img/${image}`);
@@ -26,11 +27,10 @@ function htmlFor(imagePrefix) {
     <meta name="theme-color" content="#f7f8f5" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Quiz Frigo Pronto</title>
-    <link rel="preconnect" href="https://umbrellacodes.com" />
     <link rel="preconnect" href="https://player-vz-de976c3f-628.tv.pandavideo.com.br" crossorigin />
     <link rel="preload" as="image" href="${imagePrefix}/img/arte-1.webp" fetchpriority="high" />
     <link rel="preload" as="image" href="${imagePrefix}/img/livro-frigo-pronto.webp" fetchpriority="low" />
-    <style>${styles}</style>
+    <style>${localStyles}</style>
   </head>
   <body>
     <div id="root"></div>

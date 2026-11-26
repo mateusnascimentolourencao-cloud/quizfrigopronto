@@ -5,7 +5,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/6b986471df6084ba6f89749100b2731200a722d3de0e00f48e1967f21eb2adc0.woff2") format('woff2');
+  src: url("/fonts/poppins-400-devanagari.woff2") format('woff2');
   unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
 }
 /* latin-ext */
@@ -14,7 +14,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/0b1fcab42c18b69bcfe9ce4799fcbff5af1621c53ffcfdc4723c6f5ec4ee3ffb.woff2") format('woff2');
+  src: url("/fonts/poppins-400-latin-ext.woff2") format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -23,7 +23,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/7d93459d86585bfcdbb7e0376056226adb25821ee54b96236fe2123e9560929f.woff2") format('woff2');
+  src: url("/fonts/poppins-400-latin.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* devanagari */
@@ -32,7 +32,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/f018c9ad67dc6c2ca9743ba407d879a251e778bfb3f1cced9dd59a9214ea0350.woff2") format('woff2');
+  src: url("/fonts/poppins-500-devanagari.woff2") format('woff2');
   unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
 }
 /* latin-ext */
@@ -41,7 +41,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/af5fda16a19169e029a132374616728e1bf326d90bef5a552395c5053e21cd0f.woff2") format('woff2');
+  src: url("/fonts/poppins-500-latin-ext.woff2") format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -50,7 +50,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/cd36de204aca2d5fa263a731f7c20009b5e3d754ba1f1e03c33e93a48f3e7446.woff2") format('woff2');
+  src: url("/fonts/poppins-500-latin.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* devanagari */
@@ -59,7 +59,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/58dba357cb1e89bf36e83f19227293f35d5d7de91215d0fcf394e705634837b5.woff2") format('woff2');
+  src: url("/fonts/poppins-600-devanagari.woff2") format('woff2');
   unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
 }
 /* latin-ext */
@@ -68,7 +68,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/bb1f2d582e7fba586ab70c91ef062d3becaf78b887654953863521b73665d171.woff2") format('woff2');
+  src: url("/fonts/poppins-600-latin-ext.woff2") format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -77,7 +77,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/f4e80d9dfd374d02989b87a27b5ed4cb78fbb177c27f1478e9a8b0afb7513149.woff2") format('woff2');
+  src: url("/fonts/poppins-600-latin.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* devanagari */
@@ -86,7 +86,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/de10eb6f1f452594080f69e1e4925fc68f2d594b4837c70b6c8e6ac0e8384916.woff2") format('woff2');
+  src: url("/fonts/poppins-700-devanagari.woff2") format('woff2');
   unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
 }
 /* latin-ext */
@@ -95,7 +95,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/ccfd87f69ef00d811da3d06488cec4e79ec99d289cfbcbe4be42031cecae775a.woff2") format('woff2');
+  src: url("/fonts/poppins-700-latin-ext.woff2") format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -104,7 +104,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/9338e65fc077355c7a87ae0d64cc101e23b9bf8ad78ae65f0f319c857311b526.woff2") format('woff2');
+  src: url("/fonts/poppins-700-latin.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* devanagari */
@@ -113,7 +113,7 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/6c6bb57f25ccf0ee85539099e2df61e7c74be0aca55e658cb9a7ef0c54752828.woff2") format('woff2');
+  src: url("/fonts/poppins-800-devanagari.woff2") format('woff2');
   unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
 }
 /* latin-ext */
@@ -122,7 +122,7 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/a72eccfa6cfa9c26b4004e98dbf8592ea0fb3704b2fc749e8bd60a996e2e5a7c.woff2") format('woff2');
+  src: url("/fonts/poppins-800-latin-ext.woff2") format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -131,7 +131,7 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url("https://umbrellacodes.com/api/mirror-assets/60bf0aba6526436f3930c58c12047687fbb6bff4dd180cce4613458ed3439ea2.woff2") format('woff2');
+  src: url("/fonts/poppins-800-latin.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -294,7 +294,6 @@ a.btn { text-decoration: none; animation: pop .4s ease both, pulse 1.8s ease-in-
 .btn.pulse { animation: pulse 1.8s ease-in-out infinite; }
 @keyframes pulse { 0%, 100% { box-shadow: 0 6px 18px rgba(234,88,12,.32); } 50% { box-shadow: 0 6px 18px rgba(234,88,12,.32), 0 0 0 7px rgba(234,88,12,.14); } }
 
-.nao { justify-self: center; text-align: center; font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; padding: 6px 8px; }
 .trust { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
 .trust span { display: inline-flex; align-items: center; gap: 6px; }
 .trust svg { width: 15px; height: 15px; color: var(--brand); }

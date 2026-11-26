@@ -171,14 +171,10 @@ function Result({ name, active, onPlayerLoad }) {
     return () => { cancelAnimationFrame(frame); clearTimeout(timer); };
   }, [active]);
   const search = window.location.search || '';
-  const noUrl = window.location.protocol === 'file:'
-    ? `https://quiz-geladeira-pronta.chefluana.workers.dev/combo${search}`
-    : `/combo${search}`;
   return <Section className={active ? '' : 'result-preload'} ariaHidden={!active}>
     <div className="q"><h1 className="ready">{name}, il tuo piano personalizzato è pronto.</h1><p className="sub">Prima, però, guarda questo messaggio della Chef Luana per te.</p></div>
     <div className="video" id="vsl"><iframe ref={iframeRef} id="panda-d22e8f74-5111-4cb3-92c7-cd110a759446" src={VIDEO_URL} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowFullScreen loading="eager" fetchPriority="high" title="Messaggio della Chef Luana" onLoad={onPlayerLoad} /></div>
     <a className="btn pulse" id="buy" href={`${BUY_URL}${search}`} hidden={!showButtons} onClick={() => count('comprar')}>Acquista Frigo Pronto <ArrowIcon /></a>
-    <a className="nao" id="nao" href={noUrl} hidden={!showButtons} onClick={() => count('recusar')}>No, grazie. Continuerò senza Frigo Pronto.</a>
   </Section>;
 }
 
