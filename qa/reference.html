@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<!--
+════════════════════════════════════════════════════════════════════════
+  PROJETO HTML · ARQUIVO ÚNICO   (guia técnico de edição)
+════════════════════════════════════════════════════════════════════════
+  Build : 2026-06-12-fix90-darkzone-t1s
+
+  SOBRE ESTE ARQUIVO
+  Projeto/template HTML próprio, exportado como arquivo único e
+  autocontido. É seu para editar, remodelar e reaproveitar livremente —
+  textos, estilos e layout podem ser alterados à vontade.
+
+  COMO ABRIR
+  Páginas estáticas abrem direto. Projetos com 3D / Web Workers (Three.js,
+  WebGL, etc.) precisam ser servidos por HTTP local (o navegador bloqueia
+  fetch e workers em file://):
+      python3 -m http.server 8000      →  abra  http://localhost:8000
+
+  MAPA DA ESTRUTURA
+  <head>
+    · meta / title / base ........... metadados do documento
+    · style[data-umb2-generated] .... CSS do projeto (CSSOM, animações)
+    · script[type=importmap] ........ resolve os módulos JS por specifier
+    · script[data-umb2-generated] ... runtime de suporte do arquivo:
+        · asset-interceptor ......... resolve as URLs de assets em runtime
+        · file-protocol-warning ..... aviso quando aberto em file://
+  <body>
+    · conteúdo do projeto  «««  ESTE é o conteúdo EDITÁVEL
+
+  COMO OS ASSETS SÃO RESOLVIDOS  (mantenha como está)
+  Imagens, fontes, áudio, modelos 3D (.glb/.drc/.ktx2), .wasm e scripts
+  são carregados via um mapa  { "ref" : "url" }  mais um interceptor que
+  reescreve fetch / XHR / new Worker / THREE.FileLoader em tempo de
+  execução (inclusive por sufixo de path).
+  › NÃO reescreva nem "conserte" essas URLs manualmente: são resolvidas
+    sozinhas. Mexer nelas costuma quebrar o carregamento.
+  › Os assets hospedados são PERMANENTES — não expiram.
+  › TODOS os assets (imagens, fontes, mídia, 3D) ficam hospedados via URL
+    no mapa — o HTML não carrega base64 inline, fica leve.
+
+  O QUE PODE EDITAR COM SEGURANÇA
+  · Textos, títulos e markup dentro de <body>
+  · Regras CSS nos <style data-umb2-generated=…>
+  NÃO TOQUE: importmap, scripts data-umb2-generated e as URLs do mapa.
+════════════════════════════════════════════════════════════════════════
+-->
+<html lang="pt-BR" data-umb-interceptor-ready="1" data-umb2-build="2026-06-12-fix90-darkzone-t1s" data-umb2-mode="offline"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js" id="eppiocemhmnlbhjplcgkofciiegomcon"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head><!-- build=2026-06-12-fix90-darkzone-t1s mode=standalone --><script>(function(){try{var _origGetAttr=Element.prototype.getAttribute;var _URL_ATTRS={src:1,SRC:1,href:1,HREF:1,action:1,formaction:1,data:1};Element.prototype.getAttribute=function(name){var v=_origGetAttr.call(this,name);if(v===null && _URL_ATTRS[name])return "";return v;};}catch(e){console.warn("[UMB] null-safe getAttribute patch falhou:",e);}})();</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f8f5">
+<meta name="robots" content="noindex, nofollow">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Quiz Geladeira Pronta</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<style data-umb2-src="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap">/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/6b986471df6084ba6f89749100b2731200a722d3de0e00f48e1967f21eb2adc0.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/0b1fcab42c18b69bcfe9ce4799fcbff5af1621c53ffcfdc4723c6f5ec4ee3ffb.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/7d93459d86585bfcdbb7e0376056226adb25821ee54b96236fe2123e9560929f.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/f018c9ad67dc6c2ca9743ba407d879a251e778bfb3f1cced9dd59a9214ea0350.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/af5fda16a19169e029a132374616728e1bf326d90bef5a552395c5053e21cd0f.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/cd36de204aca2d5fa263a731f7c20009b5e3d754ba1f1e03c33e93a48f3e7446.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/58dba357cb1e89bf36e83f19227293f35d5d7de91215d0fcf394e705634837b5.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/bb1f2d582e7fba586ab70c91ef062d3becaf78b887654953863521b73665d171.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/f4e80d9dfd374d02989b87a27b5ed4cb78fbb177c27f1478e9a8b0afb7513149.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/de10eb6f1f452594080f69e1e4925fc68f2d594b4837c70b6c8e6ac0e8384916.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/ccfd87f69ef00d811da3d06488cec4e79ec99d289cfbcbe4be42031cecae775a.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/9338e65fc077355c7a87ae0d64cc101e23b9bf8ad78ae65f0f319c857311b526.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/6c6bb57f25ccf0ee85539099e2df61e7c74be0aca55e658cb9a7ef0c54752828.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/a72eccfa6cfa9c26b4004e98dbf8592ea0fb3704b2fc749e8bd60a996e2e5a7c.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("https://umbrellacodes.com/api/mirror-assets/60bf0aba6526436f3930c58c12047687fbb6bff4dd180cce4613458ed3439ea2.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+/* Layout: coluna única de celular (máx. 480px); topo com progresso em 7 trechos; arte no alto de cada pergunta; opções em cartões grandes; retorno da Chef em balão verde. */
+:root {
+  color-scheme: light;
+  --brand: #064e3b;
+  --brand-deep: #043f31;
+  --brand-soft: #d9e8dc;
+  --brand-tint: #eef6f0;
+  --cta: #ea580c;
+  --cta-hover: #c2410c;
+  --cream: #fff7ed;
+  --paper: #f7f8f5;
+  --card: #ffffff;
+  --ink: #1c1917;
+  --muted: #57534e;
+  --line: #e4e6e1;
+  --wine: #8f1b1b;
+  --on-brand: #ffffff;
+  --on-brand-soft: #cfe5d6;
+  --font: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --r-lg: 22px;
+  --r-md: 16px;
+  --shadow: 0 1px 2px rgba(6, 78, 59, .06), 0 8px 24px rgba(6, 78, 59, .07);
+}
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper);
+}
+.top {
+  background: var(--paper);
+  color: var(--ink);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 6px 0;
+}
+.top-in { max-width: 480px; margin: 0 auto; display: grid; gap: 8px; }
+.brandrow { position: relative; display: flex; justify-content: center; }
+.logo { display: flex; flex-direction: column; align-items: center; gap: 3px; font-weight: 800; font-size: 14px; line-height: 1.2; letter-spacing: -.01em; text-align: center; }
+.logo img { height: 58px; width: auto; filter: drop-shadow(0 6px 10px rgba(0,0,0,.18)); }
+.logo span { color: var(--wine); }
+.logo span em { font-style: normal; color: var(--cta); }
+.back {
+  position: absolute; left: 0; top: 0;
+  appearance: none; border: 0; background: rgba(28,25,23,.06); color: var(--ink);
+  width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; cursor: pointer;
+}
+.back:hover { background: rgba(28,25,23,.12); }
+.back svg { width: 18px; height: 18px; }
+.progress { display: grid; gap: 8px; }
+.progress-label { display: flex; justify-content: space-between; font-size: 13px; color: var(--on-brand-soft); font-weight: 500; }
+.progress-label b { color: var(--on-brand); font-weight: 700; }
+.bars { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.bars i { height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; position: relative; }
+.bars i::after { content: ""; position: absolute; inset: 0; background: var(--cta); transform: scaleX(0); transform-origin: left; transition: transform .45s ease; }
+.bars i.on::after { transform: scaleX(1); }
+.bars i.now::after { transform: scaleX(.5); }
+
+main {
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 40px;
+}
+.ready { color: var(--wine); font-size: clamp(24px, 6.6vw, 28px); }
+.screen { max-width: 480px; margin: 14px auto 0; display: grid; gap: 14px; animation: in .4s ease both; }
+@keyframes in { from { opacity: .001; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+.art {
+  position: relative; aspect-ratio: 1312 / 1199; max-width: 100%; justify-self: center;
+  /* banner encolhe em tela baixa p/ o campo do nome e o botão caberem na 1ª tela */
+  width: min(100%, calc(38vh * 1312 / 1199)); width: min(100%, calc(38svh * 1312 / 1199)); border-radius: var(--r-lg);
+  overflow: hidden; background: var(--brand-tint); box-shadow: var(--shadow);
+}
+.art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ph {
+  position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 8px;
+  text-align: center; padding: 18px; color: var(--brand);
+  background:
+    radial-gradient(120% 90% at 85% 0%, #fde7d3 0%, transparent 55%),
+    radial-gradient(100% 80% at 0% 100%, var(--brand-soft) 0%, transparent 60%),
+    var(--brand-tint);
+  border: 2px dashed rgba(6, 78, 59, .25); border-radius: var(--r-lg);
+}
+.ph svg { width: 34px; height: 34px; opacity: .7; }
+.ph b { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+.ph span { font-size: 13px; color: var(--muted); max-width: 30ch; }
+
+.q { display: grid; gap: 6px; text-align: center; justify-items: center; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--cta); }
+h1 { margin: 0; font-size: clamp(22px, 6vw, 26px); line-height: 1.25; font-weight: 800; letter-spacing: -.015em; text-wrap: balance; color: var(--brand-deep); }
+.sub { margin: 0; color: var(--muted); font-size: 15px; }
+
+.opts { display: grid; gap: 10px; }
+.opt {
+  appearance: none; width: 100%; text-align: left; font: inherit; color: var(--ink);
+  background: var(--card); border: 2px solid var(--line); border-radius: var(--r-md);
+  padding: 14px 14px; display: grid; grid-template-columns: 34px 1fr 22px; align-items: center; gap: 12px;
+  cursor: pointer; transition: border-color .15s, background .15s, transform .1s;
+}
+.opt:hover { border-color: #b9d3c1; }
+.opt:active { transform: scale(.99); }
+.opt .k {
+  width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center;
+  font-weight: 700; font-size: 14px; background: var(--brand-tint); color: var(--brand);
+}
+.opt .t { font-weight: 600; font-size: 15.5px; line-height: 1.35; min-width: 0; }
+.opt .c { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--line); display: grid; place-items: center; }
+.opt .c svg { width: 13px; height: 13px; opacity: 0; color: var(--on-brand); }
+.opt.sel { border-color: var(--brand); background: var(--brand-tint); }
+.opt.sel .k { background: var(--brand); color: var(--on-brand); }
+.opt.sel .c { background: var(--brand); border-color: var(--brand); }
+.opt.sel .c svg { opacity: 1; }
+
+.field { display: grid; gap: 8px; }
+.field label { font-size: 13px; font-weight: 600; color: var(--muted); text-align: center; }
+.field input {
+  font: inherit; font-size: 18px; font-weight: 600; color: var(--ink);
+  background: var(--card); border: 2px solid var(--line); border-radius: var(--r-md);
+  padding: 15px 16px; width: 100%; outline: none; transition: border-color .15s; text-align: center;
+}
+.field input:focus { border-color: var(--brand); }
+.field input::placeholder { color: #a8a29e; font-weight: 500; }
+
+.fb {
+  display: grid; justify-items: center; gap: 8px; text-align: center;
+  background: var(--brand); color: var(--on-brand); border-radius: var(--r-lg);
+  padding: 16px; animation: pop .35s ease both; position: relative;
+}
+@keyframes pop { from { opacity: .001; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: none; } }
+.ava { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; background: #fdba74; display: grid; place-items: center; position: relative; flex: none; }
+.ava img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.ava b { font-size: 15px; color: var(--brand-deep); }
+.fb small { display: block; font-size: 12px; font-weight: 600; color: var(--on-brand-soft); margin-bottom: 2px; }
+.fb p { margin: 0; font-size: 15px; line-height: 1.5; font-weight: 500; }
+
+.btn {
+  appearance: none; border: 0; width: 100%; font: inherit; font-weight: 700; font-size: 17px;
+  color: #fff; background: var(--cta); border-radius: var(--r-md); padding: 17px 20px;
+  display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer;
+  box-shadow: 0 6px 18px rgba(234, 88, 12, .32); transition: background .15s, transform .1s, opacity .15s;
+}
+a.btn { text-decoration: none; animation: pop .4s ease both, pulse 1.8s ease-in-out .4s infinite; }
+.btn:hover { background: var(--cta-hover); }
+.btn:active { transform: scale(.99); }
+.btn:disabled { opacity: .45; box-shadow: none; cursor: not-allowed; }
+.btn svg { width: 20px; height: 20px; }
+.btn.pulse { animation: pulse 1.8s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { box-shadow: 0 6px 18px rgba(234,88,12,.32); } 50% { box-shadow: 0 6px 18px rgba(234,88,12,.32), 0 0 0 7px rgba(234,88,12,.14); } }
+
+.nao { justify-self: center; text-align: center; font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; padding: 6px 8px; }
+.trust { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
+.trust span { display: inline-flex; align-items: center; gap: 6px; }
+.trust svg { width: 15px; height: 15px; color: var(--brand); }
+
+/* carregamento */
+.load { background: var(--card); border-radius: var(--r-lg); box-shadow: var(--shadow); padding: 28px 20px; display: grid; gap: 22px; justify-items: center; text-align: center; }
+.ring { width: 132px; height: 132px; position: relative; }
+.ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring .pct { position: absolute; inset: 0; display: grid; place-items: center; font-size: 28px; font-weight: 800; color: var(--brand-deep); font-variant-numeric: tabular-nums; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; width: 100%; max-width: 320px; text-align: left; }
+.steps li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: center; font-weight: 600; font-size: 15px; color: #a8a29e; transition: color .3s; }
+.steps li .d { width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--line); display: grid; place-items: center; transition: all .3s; }
+.steps li .d svg { width: 14px; height: 14px; opacity: 0; color: #fff; }
+.steps li.go { color: var(--ink); }
+.steps li.go .d { border-color: var(--brand); border-top-color: transparent; animation: spin .8s linear infinite; }
+.steps li.ok { color: var(--brand-deep); }
+.steps li.ok .d { background: var(--brand); border-color: var(--brand); animation: none; }
+.steps li.ok .d svg { opacity: 1; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* resultado */
+.badge { justify-self: center; display: inline-flex; align-items: center; gap: 7px; background: var(--cream); color: var(--cta-hover); font-weight: 700; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; padding: 7px 12px; border-radius: 99px; border: 1px solid #fed7aa; }
+.badge svg { width: 15px; height: 15px; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video { position: relative; aspect-ratio: 9 / 16; width: min(100%, calc(72svh * 9 / 16)); margin-inline: auto; border-radius: var(--r-lg); overflow: hidden; background: var(--brand-deep); box-shadow: var(--shadow); display: grid; place-content: center; justify-items: center; gap: 10px; color: var(--on-brand); text-align: center; padding: 16px; }
+.video .play { width: 64px; height: 64px; border-radius: 50%; background: var(--cta); display: grid; place-items: center; box-shadow: 0 0 0 10px rgba(234,88,12,.22); }
+.video .play svg { width: 26px; height: 26px; margin-left: 4px; }
+.video span { font-size: 13px; color: var(--on-brand-soft); }
+.perfil { background: var(--card); border-radius: var(--r-lg); border: 1px solid var(--line); padding: 18px 16px; display: grid; gap: 14px; text-align: center; }
+.perfil h2 { margin: 0; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.perfil dl { margin: 0; display: grid; gap: 12px; }
+.perfil div { display: grid; gap: 1px; font-size: 15px; }
+.perfil dt { color: var(--muted); font-size: 12.5px; }
+.perfil dd { margin: 0; font-weight: 600; color: var(--brand-deep); min-width: 0; }
+
+:focus-visible { outline: 3px solid var(--cta); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+
+<script bis_use="true" type="text/javascript" charset="utf-8" nonce="" data-dynamic-id="4bbd0812-e749-4c82-9177-8aeee7d345df" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/200.js"></script><script bis_use="true" type="text/javascript" charset="utf-8" nonce="" data-dynamic-id="4bbd0812-e749-4c82-9177-8aeee7d345df" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/101.js"></script><style>
+  .imageye-selected {
+    outline: 2px solid black !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+  }
+</style><style data-umb2-source="root-custom-props">:root{--font:"Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;--on-brand-soft:#cfe5d6;--muted:#57534e;--brand-deep:#043f31;--r-md:16px;--on-brand:#ffffff;--card:#ffffff;--brand-soft:#d9e8dc;--wine:#8f1b1b;--r-lg:22px;--shadow:0 1px 2px rgba(6, 78, 59, .06), 0 8px 24px rgba(6, 78, 59, .07);--paper:#f7f8f5;--brand:#064e3b;--cta:#ea580c;--cream:#fff7ed;--cta-hover:#c2410c;--line:#e4e6e1;--ink:#1c1917;--brand-tint:#eef6f0}</style></head><body __processed_bea5e180-1f32-4f3f-9e98-6bc6cfc5c68a__="true" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJlbmFibGVkIiwiRkFDRUJPT0siOiJlbmFibGVkIiwiVFdJVFRFUiI6ImVuYWJsZWQiLCJSRURESVQiOiJlbmFibGVkIiwiUElOVEVSRVNUIjoiZW5hYmxlZCIsIklOU1RBR1JBTSI6ImVuYWJsZWQiLCJUSUtUT0siOiJlbmFibGVkIiwiTElOS0VESU4iOiJlbmFibGVkIiwiQ09ORklHIjoiZGlzYWJsZWQifSwidmVyc2lvbiI6IjIuMy4wIiwic2NvcmUiOjIwMzAwMH1d"><header class="top">
+  <div class="top-in" bis_skin_checked="1">
+    <div class="brandrow" bis_skin_checked="1">
+      <div class="logo" bis_skin_checked="1">
+        <img src="https://umbrellacodes.com/api/mirror-assets/9285fa3e4e25f17243625998c0ce146f2722d02a1fe6e35de70f52b85b6f5664.webp" alt="Livro Método Geladeira Pronta" width="300" height="278" loading="eager" decoding="sync">
+        <span>Geladeira <em>Pronta</em></span>
+      </div>
+      <button class="back" id="back" type="button" aria-label="Voltar" hidden="">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg>
+      </button>
+    </div>
+    <div class="progress" id="progress" bis_skin_checked="1" hidden="">
+      <div class="bars" id="bars" bis_skin_checked="1"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i></div>
+    </div>
+  </div>
+</header>
+
+<main id="app"><section class="screen"><div class="q" bis_skin_checked="1"><h1 class="ready">Treste, o seu plano personalizado está pronto.</h1><p class="sub">Mas antes, veja essa mensagem da Chef Luana para você.</p></div><div class="video" id="vsl" bis_skin_checked="1"><iframe id="panda-d22e8f74-5111-4cb3-92c7-cd110a759446" src="https://player-vz-de976c3f-628.tv.pandavideo.com.br/embed/?v=d22e8f74-5111-4cb3-92c7-cd110a759446" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen="" fetchpriority="high" title="Mensagem da Chef Luana"></iframe></div><a class="btn pulse" id="buy" href="https://pay.cakto.com.br/33ofwux_1351114">Adquirir Geladeira Pronta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="nao" id="nao" href="https://quiz-geladeira-pronta.chefluana.workers.dev/combo">Não, obrigado. Vou continuar sem o Geladeira Pronta.</a></section></main>
+
+<script>
+(function () {
+  // Artes: troque os arquivos na pasta img/ (mesmos nomes) e elas aparecem sozinhas.
+  var AVATAR = 'img/chef-avatar.webp';
+  var VSL_URL = 'https://player-vz-de976c3f-628.tv.pandavideo.com.br/embed/?v=d22e8f74-5111-4cb3-92c7-cd110a759446';
+  // Checkout Cakto "Geladeira Pronta" R$ 36,90; leva junto as UTMs que chegaram no quiz.
+  var BUY_URL = 'https://pay.cakto.com.br/33ofwux_1351114' + (location.search || '');
+  // Recusa: /combo manda para o Super Combo do produto que a pessoa comprou na Wiapy (pelo wiapy_sell).
+  var NO_URL = '/combo' + (location.search || '');
+  try { var ws0 = new URLSearchParams(location.search).get('wiapy_sell'); if (ws0) localStorage.setItem('gp_wiapy_sell', ws0); } catch (e) {}
+  var BUY_DELAY_MS = 30 * 1000;  // botão de compra e recusa aparecem 30 s depois de abrir o vídeo
+
+  // Contador do funil: cada etapa conta 1 vez por pessoa (por aba). Origem: veio da compra na Cakto ou da recusa da Cozinha.
+  var ORIGEM = (function () {
+    try { var o = sessionStorage.getItem('gp_o'); if (o) return o; } catch (e) {}
+    var r = document.referrer || '';
+    var v = /cakto/.test(r) ? 'compra' : /appcozinhaperfeita47|lovable\.app/.test(r) ? 'recusa' : 'outro';
+    try { sessionStorage.setItem('gp_o', v); } catch (e) {}
+    return v;
+  })();
+  function conta(etapa) {
+    try { if (sessionStorage.getItem('gp_e_' + etapa)) return; sessionStorage.setItem('gp_e_' + etapa, '1'); } catch (e) {}
+    var u = '/e?e=' + etapa + '&o=' + ORIGEM;
+    try { if (navigator.sendBeacon && navigator.sendBeacon(u)) return; } catch (e) {}
+    try { fetch(u, { method: 'POST', keepalive: true }); } catch (e) {}
+  }
+  conta('entrou');
+  var ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  var ICON_ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  var ICON_IMG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 9"/></svg>';
+
+  var STEPS = [
+    { id: 'nome', type: 'text',
+      art: 'img/arte-1.webp', artNote: 'Geladeira aberta, cheia de marmitas organizadas',
+      q: function () { return 'Antes de montar o seu plano, como você se chama?'; },
+      fb: function (n) { return 'Prazer, ' + n + '. Vamos montar o seu plano. São só mais seis perguntas.'; } },
+    { id: 'idade', art: 'img/arte-2.webp', artNote: 'Mulher sorrindo, pegando uma marmita na geladeira',
+      q: function (n) { return n + ', qual é a sua idade?'; },
+      opts: [
+        ['18 a 24', 'Ótimo momento pra criar uma rotina que facilita a sua vida.'],
+        ['25 a 34', 'Nessa fase a correria aperta, e ter a semana pronta faz toda a diferença.'],
+        ['35 a 44', 'Com trabalho, casa e família, organizar a comida tira um peso enorme.'],
+        ['45 a 54', 'Comer bem sem complicar é o que mais ajuda nessa fase.'],
+        ['55 ou mais', 'Comida caseira, leve e pronta na geladeira combina muito com essa fase.']
+      ] },
+    { id: 'peso', art: 'img/arte-3.webp', artNote: 'Marmitas leves e coloridas, clima de bem-estar',
+      q: function () { return 'Como você se sente com o seu peso hoje?'; },
+      opts: [
+        ['Estou satisfeita', 'Ótimo. Então o seu plano vai focar em manter a rotina e economizar.'],
+        ['Quero perder alguns quilos', 'Entendi. O seu plano vai priorizar marmitas leves e fáceis de seguir.'],
+        ['Já estive numa versão melhor de mim e quero voltar', 'Muita gente está exatamente aí. Ter a comida pronta é o primeiro passo pra voltar.'],
+        ['Não estou nada satisfeita', 'Fica tranquila, você não está sozinha. Vamos começar pela comida, que é a parte mais difícil.']
+      ] },
+    { id: 'gasto', art: 'img/arte-4.webp', artNote: 'Compras do mercado na bancada, ao lado de marmitas',
+      q: function () { return 'Você sente que gasta mais do que deveria com comida?'; },
+      opts: [
+        ['Sim, muito mais', 'Isso vai mudar quando você comprar e cozinhar tudo de uma vez.'],
+        ['Um pouco mais', 'Dá pra economizar organizando a semana de uma vez só.'],
+        ['Não sei dizer', 'Quase todo mundo se surpreende quando faz essa conta.'],
+        ['Não, gasto bem', 'Ótimo, então o plano vai te ajudar a manter isso com menos trabalho.']
+      ] },
+    { id: 'delivery', art: 'img/arte-5.webp', artNote: 'Celular com pedido de delivery ao lado de uma marmita caseira',
+      q: function () { return 'Quantas vezes por semana você pede comida no iFood ou em outro aplicativo?'; },
+      opts: [
+        ['Quase nunca', 'Ótimo. Com o plano, a comida de casa fica ainda mais prática.'],
+        ['1 ou 2 vezes', 'Com a geladeira pronta, esses pedidos ficam mais raros.'],
+        ['3 ou 4 vezes', 'É aqui que a economia mais aparece no fim do mês.'],
+        ['Quase todo dia', 'Isso pesa no bolso. O seu plano vai ter comida pronta pra esses dias.']
+      ] },
+    { id: 'atrapalha', art: 'img/arte-6.webp', artNote: 'Mulher cansada chegando em casa, cozinha bagunçada',
+      q: function () { return 'O que mais te atrapalha pra comer bem?'; },
+      opts: [
+        ['Falta de tempo', 'Por isso o plano concentra tudo no domingo. Na semana, você só pega e esquenta.'],
+        ['Não sei o que cozinhar', 'As receitas e o passo a passo já vêm prontos. Você só escolhe.'],
+        ['Comida saudável é sem graça', 'Você vai gostar. As marmitas são de comida gostosa de verdade.'],
+        ['Comer bem sai caro', 'O plano usa ingredientes do dia a dia, comprados de uma vez.']
+      ] },
+    { id: 'domingo', art: 'img/arte-7.webp', artNote: 'Domingo na cozinha montando as marmitas da semana',
+      q: function () { return 'Quanto tempo você conseguiria separar no domingo pra deixar a semana pronta?'; },
+      opts: [
+        ['Menos de 1 hora', 'Tudo bem. Dá pra começar com poucas marmitas e ir aumentando.'],
+        ['2 a 3 horas', 'Perfeito. É o tempo ideal pra deixar a semana inteira pronta.'],
+        ['Mais de 3 horas', 'Ótimo, dá pra deixar até mais de uma semana adiantada.'],
+        ['Ainda não sei', 'Sem problema. Você monta no seu ritmo, do jeito que couber na sua rotina.']
+      ] }
+  ];
+
+  var app = document.getElementById('app');
+  var backBtn = document.getElementById('back');
+  var bars = document.getElementById('bars').children;
+  var progress = document.getElementById('progress');
+
+  var st = { i: 0, name: '', ans: {}, phase: 'quiz' };
+
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function firstName(v) {
+    var w = v.trim().split(/\s+/)[0] || '';
+    return w.charAt(0).toLocaleUpperCase('pt-BR') + w.slice(1).toLocaleLowerCase('pt-BR');
+  }
+  function art(src, num, note) {
+    return '<div class="art">' +
+      '<div class="ph"><span aria-hidden="true">' + ICON_IMG + '</span><b>Arte ' + num + '</b><span>' + esc(note) + '</span></div>' +
+      '<img src="' + src + '" alt="" onload="this.previousElementSibling.hidden=true" onerror="this.hidden=true">' +
+      '</div>';
+  }
+  function avatar() {
+    return '<div class="ava"><b>CL</b><img src="' + AVATAR + '" alt="" onerror="this.hidden=true"></div>';
+  }
+  function feedback(text) {
+    return '<div class="fb" role="status">' + avatar() + '<div><small>Chef Luana</small><p>' + esc(text) + '</p></div></div>';
+  }
+  function setTop() {
+    var quiz = st.phase === 'quiz';
+    progress.hidden = !quiz;
+    backBtn.hidden = !(quiz && st.i > 0);
+    for (var k = 0; k < bars.length; k++) {
+      bars[k].className = k < st.i ? 'on' : (k === st.i ? 'now' : '');
+    }
+  }
+
+  function render() {
+    setTop();
+    window.scrollTo(0, 0);
+    if (st.phase === 'loading') return renderLoading();
+    if (st.phase === 'result') return renderResult();
+    var s = STEPS[st.i];
+    var html = '<section class="screen" aria-live="polite">' + (st.i === 0 ? art(s.art, 1, s.artNote) : '') +
+      '<div class="q">' +
+      '<h1>' + esc(s.q(st.name)) + '</h1></div>';
+    if (s.type === 'text') {
+      html += '<form id="f" class="field" novalidate>' +
+        '<input id="nome" name="nome" type="text" aria-label="Seu nome completo" autocomplete="name" maxlength="60" placeholder="Nome e sobrenome" value="' + esc(st.full || '') + '">' +
+        '<button class="btn pulse" id="go" type="submit" disabled>Começar ' + ICON_ARROW + '</button>' +
+        '</form>' +
+        '<div class="trust"><span>' + ICON_CHECK + 'Monte seu plano com apenas 7 perguntas</span></div>';
+    } else {
+      html += '<div class="opts" role="radiogroup">';
+      s.opts.forEach(function (o, k) {
+        var sel = st.ans[s.id] === k;
+        html += '<button type="button" class="opt' + (sel ? ' sel' : '') + '" role="radio" aria-checked="' + sel + '" data-k="' + k + '">' +
+          '<span class="k">' + 'ABCDE'.charAt(k) + '</span><span class="t">' + esc(o[0]) + '</span><span class="c">' + ICON_CHECK + '</span></button>';
+      });
+      html += '</div>';
+    }
+    html += '</section>';
+    app.innerHTML = html;
+    s.type === 'text' ? bindName() : bindOpts(s);
+  }
+
+  function bindName() {
+    var f = document.getElementById('f'), inp = document.getElementById('nome'), go = document.getElementById('go');
+    // Pede o nome completo, mas aceita só o primeiro nome (2+ letras).
+    function ok() { return firstName(inp.value).length >= 2; }
+    function upd() { go.disabled = !ok(); }
+    inp.addEventListener('input', upd);
+    upd();
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!ok()) return;
+      st.full = inp.value.trim().replace(/\s+/g, ' ');
+      st.name = firstName(st.full);
+      inp.blur();
+      next();
+    });
+  }
+
+  function bindOpts(s) {
+    var busy = false;
+    app.querySelectorAll('.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (busy) return;
+        busy = true;
+        st.ans[s.id] = +b.getAttribute('data-k');
+        app.querySelectorAll('.opt').forEach(function (x) { var on = x === b; x.classList.toggle('sel', on); x.setAttribute('aria-checked', on); });
+        setTimeout(next, 220); // só o tempo de ver a marcação
+      });
+    });
+  }
+
+  function next() {
+    conta('p' + (st.i + 1));
+    if (st.i < STEPS.length - 1) { st.i++; render(); }
+    else { st.phase = 'loading'; render(); }
+  }
+  backBtn.addEventListener('click', function () { if (st.i > 0) { st.i--; render(); } });
+
+  function renderLoading() {
+    var C = 2 * Math.PI * 56;
+    app.innerHTML = '<section class="screen">' +
+      '<div class="load">' +
+      '<div class="ring"><svg viewBox="0 0 132 132"><circle cx="66" cy="66" r="56" stroke="#eef6f0" stroke-width="11" fill="none"/>' +
+      '<circle id="arc" cx="66" cy="66" r="56" stroke="#ea580c" stroke-width="11" fill="none" stroke-linecap="round" stroke-dasharray="' + C + '" stroke-dashoffset="' + C + '"/></svg>' +
+      '<div class="pct" id="pct">0%</div></div>' +
+      '<h1 style="font-size:21px">' + esc(st.name) + ', estamos montando o seu plano</h1>' +
+      '<ul class="steps" id="lsteps">' +
+      ['Analisando as suas respostas…', 'Escolhendo as marmitas pro seu perfil…', 'Montando o seu plano…'].map(function (t) {
+        return '<li><span class="d">' + ICON_CHECK + '</span><span>' + t + '</span></li>';
+      }).join('') + '</ul></div></section>';
+    var arc = document.getElementById('arc'), pct = document.getElementById('pct'), li = document.getElementById('lsteps').children;
+    var T = 3200, t0 = performance.now();
+    function frame(now) {
+      var p = Math.min(1, (now - t0) / T);
+      var e = 1 - Math.pow(1 - p, 2);
+      arc.setAttribute('stroke-dashoffset', C * (1 - e));
+      pct.textContent = Math.round(e * 100) + '%';
+      for (var k = 0; k < 3; k++) li[k].className = p >= (k + 1) / 3 ? 'ok' : (p >= k / 3 ? 'go' : '');
+      if (p < 1) requestAnimationFrame(frame);
+      else setTimeout(function () { st.phase = 'result'; render(); }, 450);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function renderResult() {
+    app.innerHTML = '<section class="screen">' +
+      '<div class="q"><h1 class="ready">' + esc(st.name) + ', o seu plano personalizado está pronto.</h1>' +
+      '<p class="sub">Mas antes, veja essa mensagem da Chef Luana para você.</p></div>' +
+      '<div class="video" id="vsl"><iframe id="panda-d22e8f74-5111-4cb3-92c7-cd110a759446" src="' + VSL_URL + '" ' +
+      'allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen fetchpriority="high" title="Mensagem da Chef Luana"></iframe></div>' +
+      '<a class="btn pulse" id="buy" href="' + BUY_URL + '" hidden>Adquirir Geladeira Pronta ' + ICON_ARROW + '</a>' +
+      '<a class="nao" id="nao" href="' + esc(NO_URL) + '" hidden>Não, obrigado. Vou continuar sem o Geladeira Pronta.</a>' +
+      '</section>';
+    conta('video');
+    var buy = document.getElementById('buy'), nao = document.getElementById('nao');
+    buy.addEventListener('click', function () { conta('comprar'); });
+    nao.addEventListener('click', function () { conta('recusar'); });
+    // Botão de compra e recusa aparecem 30 s depois de abrir a tela do vídeo.
+    setTimeout(function () { buy.hidden = false; nao.hidden = false; conta('botoes'); }, BUY_DELAY_MS);
+  }
+
+  render();
+})();
+</script>
+
+</body></html>
