@@ -1,7 +1,7 @@
 export const STEPS = [
   {
     id: 'nome', type: 'text',
-    art: '/img/arte-1.png', artNote: 'Frigorifero aperto, pieno di pasti pronti e organizzati',
+    art: '/img/arte-1.webp', artNote: 'Frigorifero aperto, pieno di pasti pronti e organizzati',
     question: () => 'Prima di preparare il tuo piano, come ti chiami?',
   },
   {

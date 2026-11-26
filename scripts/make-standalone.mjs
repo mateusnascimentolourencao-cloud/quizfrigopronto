@@ -12,7 +12,7 @@ const styles = readFileSync(join(assetDirectory, cssFile), 'utf8').replaceAll(/<
 
 function htmlFor(imagePrefix) {
   let script = bundledScript;
-  for (const image of ['arte-1.png', 'livro-frigo-pronto.png']) {
+  for (const image of ['arte-1.webp', 'livro-frigo-pronto.webp']) {
     const originalPath = JSON.stringify(`/img/${image}`);
     if (!script.includes(originalPath)) throw new Error(`Image ${image} was not found in the build.`);
     script = script.replaceAll(originalPath, JSON.stringify(`${imagePrefix}/img/${image}`));
@@ -28,6 +28,8 @@ function htmlFor(imagePrefix) {
     <title>Quiz Frigo Pronto</title>
     <link rel="preconnect" href="https://umbrellacodes.com" />
     <link rel="preconnect" href="https://player-vz-de976c3f-628.tv.pandavideo.com.br" crossorigin />
+    <link rel="preload" as="image" href="${imagePrefix}/img/arte-1.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="${imagePrefix}/img/livro-frigo-pronto.webp" fetchpriority="low" />
     <style>${styles}</style>
   </head>
   <body>

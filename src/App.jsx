@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { BUY_URL, STEPS, VIDEO_URL } from './quizData.js';
 
-const LOGO = '/img/livro-frigo-pronto.png';
+const LOGO = '/img/livro-frigo-pronto.webp';
 const LOADING_STEPS = [
   'Analizziamo le tue risposte…',
   'Scegliamo i pasti adatti a te…',
@@ -27,7 +27,7 @@ function Header({ index, phase, onBack }) {
     <div className="top-in">
       <div className="brandrow">
         <div className="logo">
-          <img src={LOGO} alt="Libro del Metodo Frigo Pronto" width="1303" height="1207" loading="eager" decoding="sync" />
+          <img src={LOGO} alt="Libro del Metodo Frigo Pronto" width="260" height="241" loading="eager" decoding="async" />
           <span>Frigo <em>Pronto</em></span>
         </div>
         <button className="back" id="back" type="button" aria-label="Indietro" hidden={!quiz || index === 0} onClick={onBack}>
@@ -48,7 +48,7 @@ function Hero({ step }) {
     <div className="ph" hidden={!showPlaceholder}>
       <span aria-hidden="true"><ImageIcon /></span><b>Immagine 1</b><span>{step.artNote}</span>
     </div>
-    <img src={step.art} alt="" hidden={!showImage} onLoad={() => setShowPlaceholder(false)} onError={() => setShowImage(false)} />
+    <img src={step.art} alt="" hidden={!showImage} loading="eager" decoding="async" fetchPriority="high" onLoad={() => setShowPlaceholder(false)} onError={() => setShowImage(false)} />
   </div>;
 }
 
