@@ -317,11 +317,7 @@ a.btn { text-decoration: none; animation: pop .4s ease both, pulse 1.8s ease-in-
 /* resultado */
 .badge { justify-self: center; display: inline-flex; align-items: center; gap: 7px; background: var(--cream); color: var(--cta-hover); font-weight: 700; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; padding: 7px 12px; border-radius: 99px; border: 1px solid #fed7aa; }
 .badge svg { width: 15px; height: 15px; }
-.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.video { position: relative; aspect-ratio: 9 / 16; width: min(100%, calc(72svh * 9 / 16)); margin-inline: auto; border-radius: var(--r-lg); overflow: hidden; background: var(--brand-deep); box-shadow: var(--shadow); display: grid; place-content: center; justify-items: center; gap: 10px; color: var(--on-brand); text-align: center; padding: 16px; }
-.video .play { width: 64px; height: 64px; border-radius: 50%; background: var(--cta); display: grid; place-items: center; box-shadow: 0 0 0 10px rgba(234,88,12,.22); }
-.video .play svg { width: 26px; height: 26px; margin-left: 4px; }
-.video span { font-size: 13px; color: var(--on-brand-soft); }
+.video { position: relative; aspect-ratio: 9 / 16; width: min(100%, calc(72svh * 9 / 16)); margin-inline: auto; border-radius: var(--r-lg); overflow: hidden; background: #000; box-shadow: var(--shadow); }
 .perfil { background: var(--card); border-radius: var(--r-lg); border: 1px solid var(--line); padding: 18px 16px; display: grid; gap: 14px; text-align: center; }
 .perfil h2 { margin: 0; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
 .perfil dl { margin: 0; display: grid; gap: 12px; }
@@ -334,7 +330,7 @@ a.btn { text-decoration: none; animation: pop .4s ease both, pulse 1.8s ease-in-
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
-/* Keep the Panda iframe loading in the viewport during the progress screen. */
+/* Keep the video player loading in the viewport during the progress screen. */
 .screen.result-preload {
   position: fixed;
   inset: 0;

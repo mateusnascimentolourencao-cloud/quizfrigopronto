@@ -49,7 +49,7 @@ for (const size of sizes) {
       await page.waitForTimeout(260);
     }
     await page.locator('.load').waitFor();
-    await page.locator('.video iframe').waitFor({ state: 'attached', timeout: 7000 });
+    await page.locator('vturb-smartplayer#vid-6b08e54fdbd1503394023689').waitFor({ state: 'attached', timeout: 7000 });
     await page.locator('.load').waitFor({ state: 'detached', timeout: 7000 });
     if (await page.locator('#buy').isVisible()) throw Error('Purchase button appeared before delay');
     await page.waitForTimeout(30500);

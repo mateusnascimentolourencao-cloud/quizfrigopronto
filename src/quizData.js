@@ -61,5 +61,5 @@ export const STEPS = [
   },
 ];
 
-export const VIDEO_URL = 'https://player-vz-de976c3f-628.tv.pandavideo.com.br/embed/?v=d22e8f74-5111-4cb3-92c7-cd110a759446&autoplay=true&muted=true';
+export const VIDEO_SCRIPT_URL = 'https://scripts.converteai.net/fc14b8b2-f479-4866-940f-001c16b5f106/players/6b08e54fdbd1503394023689/v4/player.js';
 export const BUY_URL = 'https://pay.cakto.com.br/33ofwux_1351114';

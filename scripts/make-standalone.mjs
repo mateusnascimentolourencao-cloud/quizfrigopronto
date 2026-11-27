@@ -27,7 +27,7 @@ function htmlFor(imagePrefix) {
     <meta name="theme-color" content="#f7f8f5" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Quiz Frigo Pronto</title>
-    <link rel="preconnect" href="https://player-vz-de976c3f-628.tv.pandavideo.com.br" crossorigin />
+    <link rel="preconnect" href="https://scripts.converteai.net" crossorigin />
     <link rel="preload" as="image" href="${imagePrefix}/img/arte-1.webp" fetchpriority="high" />
     <link rel="preload" as="image" href="${imagePrefix}/img/livro-frigo-pronto.webp" fetchpriority="low" />
     <style>${localStyles}</style>

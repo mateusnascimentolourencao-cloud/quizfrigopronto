@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { BUY_URL, STEPS, VIDEO_URL } from './quizData.js';
+import { BUY_URL, STEPS, VIDEO_SCRIPT_URL } from './quizData.js';
 
 const LOGO = '/img/livro-frigo-pronto.webp';
 const LOADING_STEPS = [
@@ -158,22 +158,45 @@ function Loading({ name, onDone, playerLoaded }) {
 
 function Result({ name, active, onPlayerLoad }) {
   const [showButtons, setShowButtons] = useState(false);
-  const iframeRef = useRef(null);
+  const playerRef = useRef(null);
+  const playerReady = useRef(false);
+  useEffect(() => {
+    const player = playerRef.current;
+    const handleReady = () => {
+      playerReady.current = true;
+      onPlayerLoad();
+    };
+    player.addEventListener('player:ready', handleReady);
+    const script = document.createElement('script');
+    script.src = VIDEO_SCRIPT_URL;
+    script.async = true;
+    document.head.appendChild(script);
+    return () => {
+      player.removeEventListener('player:ready', handleReady);
+      script.remove();
+    };
+  }, []);
   useEffect(() => {
     if (!active) return;
     count('video');
-    // The iframe has already loaded during the progress screen. Start from the beginning on reveal.
-    const frame = requestAnimationFrame(() => {
-      iframeRef.current?.contentWindow?.postMessage({ type: 'currentTime', parameter: 0 }, '*');
-      iframeRef.current?.contentWindow?.postMessage({ type: 'play' }, '*');
-    });
+    const player = playerRef.current;
+    const start = () => {
+      player.mute();
+      Promise.resolve().then(() => player.seek(0)).catch(() => {}).then(() => player.play()).catch(() => {});
+    };
+    if (playerReady.current) start();
+    else player.addEventListener('player:ready', start, { once: true });
     const timer = setTimeout(() => { setShowButtons(true); count('botoes'); }, 30000);
-    return () => { cancelAnimationFrame(frame); clearTimeout(timer); };
+    return () => { player.removeEventListener('player:ready', start); clearTimeout(timer); };
   }, [active]);
   const search = window.location.search || '';
   return <Section className={active ? '' : 'result-preload'} ariaHidden={!active}>
     <div className="q"><h1 className="ready">{name}, il tuo piano personalizzato è pronto.</h1><p className="sub">Prima, però, guarda questo messaggio della Chef Luana per te.</p></div>
-    <div className="video" id="vsl"><iframe ref={iframeRef} id="panda-d22e8f74-5111-4cb3-92c7-cd110a759446" src={VIDEO_URL} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowFullScreen loading="eager" fetchPriority="high" title="Messaggio della Chef Luana" onLoad={onPlayerLoad} /></div>
+    <div className="video" id="vsl">
+      <vturb-smartplayer ref={playerRef} id="vid-6b08e54fdbd1503394023689" style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: 400 }}>
+        <div className="vturb-player-placeholder" style={{ position: 'relative', width: '100%', padding: '177.77777777777777% 0 0', zIndex: 0, backgroundColor: 'black' }} />
+      </vturb-smartplayer>
+    </div>
     <a className="btn pulse" id="buy" href={`${BUY_URL}${search}`} hidden={!showButtons} onClick={() => count('comprar')}>Acquista Frigo Pronto <ArrowIcon /></a>
   </Section>;
 }

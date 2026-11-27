@@ -22,6 +22,6 @@ node qa/verify.mjs
 node qa/verify-video.mjs
 ```
 
-`verify.mjs` percorre tutte le sette domande e verifica il ritardo di 30 secondi prima della comparsa del pulsante finale. `verify-video.mjs` controlla che il player caricato durante la schermata di progresso continui a riprodurre il video quando appare il risultato. Gli script usano Chrome installato in `C:/Program Files/Google/Chrome/Application/chrome.exe`.
+`verify.mjs` percorre tutte le sette domande e verifica il ritardo di 30 secondi prima della comparsa del pulsante finale. `verify-video.mjs` controlla il caricamento e la riproduzione del player VTurb. Gli script usano Chrome installato in `C:/Program Files/Google/Chrome/Application/chrome.exe`.
 
-La schermata di progresso dura almeno 3,2 secondi e attende il caricamento iniziale del player, per un massimo di 9 secondi. Il video parte automaticamente senza audio; l'utente può attivare l'audio nel player.
+La schermata di progresso dura almeno 3,2 secondi e attende che il player sia pronto, per un massimo di 9 secondi. Il video viene avviato senza audio; l'utente può attivare l'audio nel player.
